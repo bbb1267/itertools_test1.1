@@ -23,4 +23,19 @@ def run_event_planner():
     seating = list(itertools.zip_longest(guests, table_numbers, fillvalue="Без места"))
     print(f"Рассадка: {seating}")
 
+    #5. HARD(combinations + filters)
+    weights = [15, 30, 45, 10, 20]
+    target = 60
+    valid_combos = []
+    for r in range(1, len(weights) + 1):
+        for combo in itertools.combinations(weights, r):
+            if sum(combo) == target:
+                valid_combos.append(combo)
+    print(f"Комбинация подарков на {target}кг: {valid_combos}")
+
+
+if __name__ == "__main__":
+    run_event_planner()
+    
+
           
